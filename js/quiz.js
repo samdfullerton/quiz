@@ -9,4 +9,3 @@ var startDiv = document.getElementById("start");
 var questionsDiv = document.getElementById("questions")
 var endDiv = document.getElementById("end")
 var questionIndex = 0
-function 
