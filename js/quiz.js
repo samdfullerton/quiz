@@ -49,6 +49,16 @@ function renderQuestions(){
 
 }
 function answerClick(){
+    if (this.value !== questions[questionIndex].answer) {
+        timer -= 10;
+        if (timer < 0) {
+            timer = 0
+        } 
+        // update the timer
+        console.log("wrong");
+    } else {
+        console.log("correct")
+    }
 
 }
 function gameOver(){
