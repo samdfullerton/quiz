@@ -17,6 +17,7 @@ var startDiv = document.getElementById("start");
 var questionsDiv = document.getElementById("questions")
 var endDiv = document.getElementById("end")
 var startBtn = document.getElementById("startBtn")
+var choicesDiv = document.getElementById("choices")
 var questionIndex = 0
 var timer = 60
 
@@ -31,6 +32,20 @@ function startQuiz(){
 }
 function renderQuestions(){
     var currentQuestion = questions[questionIndex]
+    var questionTitle = document.getElementById("question-title");
+    questionTitle.textContent = currentQuestion.question;
+    choicesDiv.innerHTML ="";
+    currentQuestion.choices.forEach(function(choice){
+        var choiceBtn = document.createElement("button");
+        choiceBtn.setAttribute("class","choice");
+        choiceBtn.setAttribute("value",choice);
+        choiceBtn.textContent = choice;
+        choiceBtn.onclick = answerClick;
+        choicesDiv.appendChild(choiceBtn);
+
+    })
+
+
 
 }
 function answerClick(){
