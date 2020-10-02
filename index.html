@@ -13,8 +13,9 @@
 <body>
     <!-- header to hold time -->
 <header>Time: <div id="timer"></div></header>
-
-    <div class="container">
+ <div class="container-fluid" id="open">
+    <div class="container"> 
+        
         <!-- this is the start button -->
         <div  id="start">
             <button id="startBtn"  type="button" class="btn btn-light">start</button>
@@ -36,13 +37,16 @@
 
         <div class ="hide" id="scores">
             <h1>High Scores</h1>
-            <div id="scoreboard"></div>
 
+         
         </div>
+        <p id="scoreboard">Scoreboard</p>
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="js/quiz.js"></script>
+</div>
+   
 </body>
 </html>

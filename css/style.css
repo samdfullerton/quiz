@@ -1,3 +1,9 @@
 .hide {
     display: none;
 }
+body {
+    background: gray;
+}
+.open {
+    color: tan;
+}

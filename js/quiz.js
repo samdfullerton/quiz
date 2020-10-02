@@ -1,3 +1,5 @@
+var scores = localStorage.getItem("scores");
+document.getElementById("scoreboard").innerHTML = localStorage.getItem("scores");
 var questions = [{
     question:"What color is the sky?",
     choices:["green","yellow","blue","purple"],
@@ -17,14 +19,16 @@ var startDiv = document.getElementById("start");
 var questionsDiv = document.getElementById("questions")
 var endDiv = document.getElementById("end")
 var startBtn = document.getElementById("startBtn")
+var submitBtn = document.getElementById("submit")
 var choicesDiv = document.getElementById("choices")
 var questionIndex = 0
 var timer = 60
 var numCorrect = 0
 var interval 
+localStorage.setItem("scores","")
 
 function startQuiz(){
-    startDiv.setAttribute("class", "hide");
+    // startDiv.setAttribute("class", "hide");
     questionsDiv.removeAttribute("class"); 
     //code to start the timer here
     interval = setInterval("updateClock()", 1000);
@@ -84,11 +88,18 @@ function answerClick(){
 
 }
 function gameOver(){
-    endDiv.innerHTML += "<br>" + numCorrect + "/" + questions.length + " correct";
+    endDiv.innerHTML += "<br>" + numCorrect + "/" + questions.length + "correct";
+    document.getElementById("entername").removeAttribute("class");
 }
 function saveHighScore(){
-    
+    var records = localStorage.getItem("scores") + "<br>" + document.getElementById("name").value + " " + numCorrect;
+    localStorage.setItem("scores", records);
+    document.getElementById("scoreboard").innerHTML = localStorage.getItem("scores");
+    document.getElementById("scores").removeAttribute("class");
+    document.getElementById("entername").setAttribute("class", "hide");
+    endDiv.innerHTML = "";
 
 }
 startBtn.onclick = startQuiz;
+submitBtn.onclick = saveHighScore;
 
