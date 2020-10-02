@@ -49,6 +49,7 @@ function renderQuestions(){
 
 }
 function answerClick(){
+    console.log(this.value)
     if (this.value !== questions[questionIndex].answer) {
         timer -= 10;
         if (timer < 0) {
@@ -59,6 +60,13 @@ function answerClick(){
     } else {
         console.log("correct")
     }
+    questionIndex++
+    if (questionIndex === questions.length) {
+        gameOver()     
+    }else {
+        renderQuestions()
+    }
+    
 
 }
 function gameOver(){
