@@ -87,6 +87,7 @@ function gameOver(){
     endDiv.innerHTML += "<br>" + numCorrect + "/" + questions.length + " correct";
 }
 function saveHighScore(){
+    
 
 }
 startBtn.onclick = startQuiz;
